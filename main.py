@@ -18,7 +18,8 @@ class Coffee(QMainWindow):
 
         self.tableWidget.setRowCount(len(result))
         self.tableWidget.setColumnCount(len(result[0]))
-        titles = [description[0] for description in cur.description]
+        titles = ['id', 'название', 'степень обжарки', 'молотый или нет', 'описание вкуса', 'цена', 'объём']
+        self.tableWidget.setVerticalHeaderLabels(titles)
         for i, elem in enumerate(result):
             for j, val in enumerate(elem):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(val)))
