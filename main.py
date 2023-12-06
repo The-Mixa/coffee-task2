@@ -37,6 +37,9 @@ class Coffee(QMainWindow):
         self.con.commit()
 
         self.tableWidget.setRowCount(i)
+        self.tableWidget.setHorizontalHeaderLabels(
+            ['ID', 'Назавание сорта', 'Степень обжарки', 'молотый/в зёрнах', 'описание вкуса', 'цена',
+             'объём упаковки'])
         for j, val in enumerate(data):
             self.tableWidget.setItem(i - 1, j, QTableWidgetItem(str(val)))
         self.tableWidget.resizeColumnsToContents()
